@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
+use App\Models\Types;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -17,7 +18,8 @@ class ProjectController extends Controller
     }
     public function create()
     {
-        return view('admin.projects.create');
+        $types = Types::all();
+        return view('admin.projects.create', compact('types'));
 
     }
 
@@ -49,7 +51,10 @@ class ProjectController extends Controller
     }
     public function show(Project $project)
     {
-        return view('admin.projects.show', compact('project'));
+
+        $types = Types::all();
+
+        return view('admin.projects.show', compact('project', 'types'));
 
     }
 
@@ -58,7 +63,9 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'));
+        $types = Types::all();
+
+        return view('admin.projects.edit', compact('project', 'types'));
 
     }
     public function update(UpdateProjectRequest $request, Project $project)

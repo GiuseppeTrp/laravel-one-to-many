@@ -28,7 +28,9 @@ class UpdateProjectRequest extends FormRequest
         'img' => 'required|string',
         'types' => 'required|string',
         'link' => 'required|string',
-        'cover_image' => 'nullable|max:255'
+        'cover_image' => 'nullable|max:255',
+        'type_id' => 'required|nullable'
+
     ];
 }
 
@@ -41,7 +43,9 @@ public function messages(): array
         'img.required' => 'Image is required',
         'types.required' => 'Type is required',
         'link.required' => 'Link is required',
-        'cover_image.max' => 'Cover image must not exceed 255 characters'
+        'cover_image.max' => 'Cover image must not exceed 255 characters',
+        'type_id.required' => 'Types_is  is required or invalid'
+
     ];
 }
 

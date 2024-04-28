@@ -29,11 +29,11 @@
                 @enderror
             </div>
         
-             <div class="mb-4 pt-4 pb-0 mb-0">
+            {{-- img input --}}
+            <div class="mb-4 pt-4 pb-0 mb-0">
                 <label for="img" class="form-label">Project image</label>
                 <input type="text" class="text-secondary form-control @error('img') is-invalid @enderror" id="img" name="img" value="//">
                 <input type="file" class="form-control @error('cover_image') is-invalid @enderror" id="cover_image" name="cover_image">
-
                 @error('img')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -71,18 +71,24 @@
                 @enderror
             </div>
 
-            
-        
-
+            {{-- types_id input --}}
+            <div class="mb-4">
+                <label for="types" class="form-label">types_id</label>
+                <select class="form-select @error('types') is-invalid @enderror" id="types" name='types'>
+                    <option value="">Select a type</option>
+                    <option value="Database" {{ old('types') == 'Database' ? 'selected' : '' }}>Database</option>
+                    <option value="Front-end" {{ old('types') == 'Front-end' ? 'selected' : '' }}>Front-end</option>
+                    <option value="Back-End" {{ old('types') == 'Back-End' ? 'selected' : '' }}>Back-End</option>
+                </select>
+                @error('types')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
 
             <button type="submit" class="btn btn-primary">Create</button>
         </form>
         
     </div>
-ects</a>
-
-        </form>
-        
-    </div>
-
 @endsection

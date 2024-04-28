@@ -13,9 +13,9 @@ class TypesController extends Controller
      */
     public function index()
     {
-        $type = types::all();
+        $types = types::all();
 
-        return view('admin.types.index', compact('type'));    }
+        return view('admin.types.index', compact('types'));    }
 
     /**
      * Show the form for creating a new resource.
@@ -30,7 +30,7 @@ class TypesController extends Controller
      */
     public function store(StoreTypesRequest $request)
     {
-        //
+        return view('admin.types.show', compact('type'));
     }
 
     /**

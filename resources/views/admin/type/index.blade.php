@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
 
-        <a href="{{ route('admin.type.create') }}" class="btn btn-sm btn-outline-success">create a new type</a>
+        <a href="{{ route('admin.types.create') }}" class="btn btn-sm btn-outline-success">create a new type</a>
 
         <table class="table">
             <thead>
@@ -23,7 +23,7 @@
                         <td> {{ $type->description }}</td>
 
                         <td scope="col">
-                            <a href="{{ route('admin.type.show', $type->id) }}">
+                            <a href="{{ route('admin.types.show', $type->id) }}">
                                 <button class="btn btn-outline-success">Details</button>
                             </a>
                         </td>

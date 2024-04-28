@@ -24,9 +24,15 @@
             <h5>Link:</h5>
             <p class="border rounded p-2  bg-light fw-bold"><a class="text-dark" href="{{ $project->link }}">{{ $project->link }}</a></p>
         </div>
-        <div class=" pb-4">
+        <div class="pb-4">
             <h5>Types:</h5>
-            <p class="border rounded p-2  bg-light fw-bold">{{ $project->type->title }}</p>
+            <p class="border rounded p-2 bg-light fw-bold">
+                @if ($project->type)
+                    {{ $project->type->title }}
+                @else
+                    No-one       
+                @endif
+            </p>
         </div>
     </div>
     
