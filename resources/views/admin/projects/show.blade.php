@@ -24,6 +24,10 @@
             <h5>Link:</h5>
             <p class="border rounded p-2  bg-light fw-bold"><a class="text-dark" href="{{ $project->link }}">{{ $project->link }}</a></p>
         </div>
+        <div class=" pb-4">
+            <h5>Types:</h5>
+            <p class="border rounded p-2  bg-light fw-bold">{{ $project->type->title }}</p>
+        </div>
     </div>
     
     <div class="text-center mt-5">
@@ -33,6 +37,7 @@
         
         <a href="{{ route('admin.projects.index') }}" class="btn btn-outline-secondary text-uppercase fw-bold ms-3">Back to Projects</a>
     </div>
+    
 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
