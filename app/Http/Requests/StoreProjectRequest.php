@@ -43,7 +43,7 @@ public function messages(): array
         'types.required' => 'Type is required',
         'link.required' => 'Link is required',
         'cover_image.max' => 'Cover image must not exceed 255 characters',
-        'type_id.required' => 'Types_is  is required'
+        'type_id.required' => 'Types id is required'
     ];
 }
 

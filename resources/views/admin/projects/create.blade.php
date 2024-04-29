@@ -71,21 +71,22 @@
                 @enderror
             </div>
 
-            {{-- types_id input --}}
+          {{-- types_id input --}}
             <div class="mb-4">
-                <label for="types" class="form-label">types_id</label>
-                <select class="form-select @error('types') is-invalid @enderror" id="types" name='types'>
+                <label for="type_id" class="form-label">types_id</label>
+                <select class="form-select @error('type_id') is-invalid @enderror" id="type_id" name='type_id'>
                     <option value="">Select a type</option>
-                    <option value="Database" {{ old('types') == 'Database' ? 'selected' : '' }}>Database</option>
-                    <option value="Front-end" {{ old('types') == 'Front-end' ? 'selected' : '' }}>Front-end</option>
-                    <option value="Back-End" {{ old('types') == 'Back-End' ? 'selected' : '' }}>Back-End</option>
+                    <option value="Database" {{ old('type_id') == 'Database' ? 'selected' : '' }}>Database</option>
+                    <option value="Front-end" {{ old('type_id') == 'Front-end' ? 'selected' : '' }}>Front-end</option>
+                    <option value="Back-End" {{ old('type_id') == 'Back-End' ? 'selected' : '' }}>Back-End</option>
                 </select>
-                @error('types')
+                @error('type_id')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
                 @enderror
             </div>
+
 
             <button type="submit" class="btn btn-primary">Create</button>
         </form>
